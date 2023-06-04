@@ -1,10 +1,18 @@
 package com.example.demo.util.common;
 
+import com.google.gson.annotations.SerializedName;
+
 public class CustomMapper {
 
+    @SerializedName("operand1")
     private int operand1;
+
+    @SerializedName("operand2")
     private int operand2;
+
+    @SerializedName("result")
     private int result;
+
 
     public CustomMapper(int key, int value, String symbol) {
         this.operand1 = key;

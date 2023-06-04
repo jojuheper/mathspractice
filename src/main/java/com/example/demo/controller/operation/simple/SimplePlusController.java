@@ -33,21 +33,20 @@ public class SimplePlusController {
 
     private String generateLeadingOnes(int maxGenerate) {
 
-        Gson gson = new Gson();
         Random random = new Random();
+        DataWrapper dataWrapper = new DataWrapper();
         List<CustomMapper> customMapperList = new ArrayList<>();
 
         for (int operation = 0; operation < maxGenerate; operation++) {
-            logger.info("Size List: " + customMapperList.size());
+            logger.debug("Size List: " + customMapperList.size());
             int key = random.nextInt(9);
             int value = random.nextInt(9);
 
-            customMapperList.add(new CustomMapper(key, value, Constant.Symbol.PLUS));
+            dataWrapper.addData(new CustomMapper(key, value, Constant.Symbol.PLUS));
 
         }
-
-
-        return gson.toJson(customMapperList);
+        
+        return dataWrapper.toJson();
     }
 }
 
