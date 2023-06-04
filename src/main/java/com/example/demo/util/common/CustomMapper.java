@@ -2,39 +2,39 @@ package com.example.demo.util.common;
 
 public class CustomMapper {
 
-    private int key;
-    private int value;
+    private int operand1;
+    private int operand2;
     private int result;
 
     public CustomMapper(int key, int value, String symbol) {
-        this.key = key;
-        this.value = value;
+        this.operand1 = key;
+        this.operand2 = value;
         this.result = getResult(symbol);
     }
 
-    public int getKey() {
-        return key;
+    public int getOperand1() {
+        return operand1;
     }
 
-    public int getValue() {
-        return value;
+    public int getOperand2() {
+        return operand2;
     }
 
     public int getResult(String symbol) {
-        switch(symbol){
+        switch (symbol) {
             case "+":
-                setResult(this.key + this.value);
+                setResult(this.operand1 + this.operand2);
                 break;
             case "-":
-                setResult(this.key - this.value);
+                setResult(this.operand1 - this.operand2);
                 break;
             case "*":
-                setResult(this.key * this.value);
+                setResult(this.operand1 * this.operand2);
                 break;
             case "/":
-                if (this.key > this.value){
-                    setResult(this.key / this.value);
-                }else{
+                if (this.operand1 > this.operand2) {
+                    setResult(this.operand1 / this.operand2);
+                } else {
                     setResult(0);
                 }
         }
@@ -45,11 +45,11 @@ public class CustomMapper {
         this.result = result;
     }
 
-    public void setKey(int key) {
-        this.key = key;
+    public void setOperand1(int operand1) {
+        this.operand1 = operand1;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setOperand2(int operand2) {
+        this.operand2 = operand2;
     }
 }
