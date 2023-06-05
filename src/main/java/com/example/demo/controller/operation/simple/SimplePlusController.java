@@ -45,7 +45,7 @@ public class SimplePlusController {
             dataWrapper.addData(new CustomMapper(key, value, Constant.Symbol.PLUS));
 
         }
-        
+
         return dataWrapper.toJson();
     }
 }
