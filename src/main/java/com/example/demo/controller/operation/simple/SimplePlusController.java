@@ -2,18 +2,16 @@ package com.example.demo.controller.operation.simple;
 
 import com.example.demo.util.common.CustomMapper;
 import com.example.demo.util.helper.Constant;
-import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @RestController
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET})
 @RequestMapping("/plus")
 public class SimplePlusController {
 

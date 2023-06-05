@@ -23,12 +23,12 @@ public class MathsApplication {
     @Configuration
     class WebSecurityConfig {
 
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-            http.authorizeRequests().antMatchers("/plus").permitAll();
-            http.headers().frameOptions().sameOrigin();
-            return http.build();
-        }
+//        @Bean
+//        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//            http.authorizeRequests().antMatchers("/plus").permitAll();
+//            http.headers().frameOptions().sameOrigin();
+//            return http.build();
+//        }
 
         @Bean
         public WebSecurityCustomizer webSecurityCustomizer() {
