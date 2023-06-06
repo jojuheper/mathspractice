@@ -1,8 +1,14 @@
 package com.example.demo.util.common;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class CustomMapper {
+
+    @SerializedName("id")
+    private int id;
 
     @SerializedName("operand1")
     private int operand1;
@@ -13,8 +19,10 @@ public class CustomMapper {
     @SerializedName("result")
     private int result;
 
+    public CustomMapper(){}
 
-    public CustomMapper(int key, int value, String symbol) {
+    public CustomMapper(int id, int key, int value, String symbol) {
+        this.id = id;
         this.operand1 = key;
         this.operand2 = value;
         this.result = getResult(symbol);
@@ -59,5 +67,10 @@ public class CustomMapper {
 
     public void setOperand2(int operand2) {
         this.operand2 = operand2;
+    }
+
+    public String toJson(List<CustomMapper> customMapperList) {
+        Gson gson = new Gson();
+        return gson.toJson(customMapperList);
     }
 }
